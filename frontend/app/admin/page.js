@@ -32,11 +32,13 @@ export default function AdminPage() {
       setLoading(true);
 
       // API Call
-      await axios.post(
-`${process.env.NEXT_PUBLIC_API_URL}/feed`        {
-          message,
-        }
-      );
+    await axios.post(
+  `${process.env.NEXT_PUBLIC_API_URL}/feed`,
+  {
+    message,
+  }
+);
+     
 
       // clear input
       setMessage("");
