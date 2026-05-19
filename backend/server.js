@@ -1,3 +1,4 @@
+//backend/server.js
 const express = require("express");
 const http = require("http");
 const cors = require("cors");
@@ -12,8 +13,13 @@ connectDB();
 
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://realtime-chi-peach.vercel.app"
+];
+
 app.use(cors({
-  origin: "https://realtime-chi-peach.vercel.app",
+  origin: allowedOrigins,
   credentials: true,
 }));
 
@@ -23,7 +29,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://realtime-chi-peach.vercel.app",
+    origin: allowedOrigins,
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -46,6 +52,7 @@ app.get("/", (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
+
 app.get("/health", (req, res) => {
   res.status(200).json({
     success: true,

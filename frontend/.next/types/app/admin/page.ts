@@ -1,4 +1,4 @@
-// File: C:\Users\Az\Downloads\syncup-realtime-feed\frontend\app\admin\page.js
+// File: C:\Projects\pavani\realtime\frontend\app\admin\page.js
 import * as entry from '../../../../app/admin/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
