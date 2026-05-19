@@ -41,7 +41,7 @@ export default function HomePage() {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/feed"
+       `${process.env.NEXT_PUBLIC_API_URL}/feed`
       );
 
       setFeeds(res.data.data);
