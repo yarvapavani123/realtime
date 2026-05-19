@@ -10,8 +10,7 @@ cd frontend
 npm install
 npm run dev
 
-Frontend:
-http://localhost:3000
+Frontend && Backend::
+https://realtime-sage.vercel.app/
 
-Backend:
-http://localhost:5000
+
