@@ -12,14 +12,20 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://realtime-chi-peach.vercel.app",
+  credentials: true,
+}));
+
 app.use(express.json());
 
 const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "https://realtime-chi-peach.vercel.app",
+    methods: ["GET", "POST"],
+    credentials: true,
   },
 });
 
@@ -31,8 +37,12 @@ io.on("connection", (socket) => {
   console.log("Connected:", socket.id);
 
   socket.on("disconnect", () => {
-    console.log("Disconnected");
+    console.log("Disconnected:", socket.id);
   });
+});
+
+app.get("/", (req, res) => {
+  res.send("Backend Running Successfully");
 });
 
 const PORT = process.env.PORT || 5000;
