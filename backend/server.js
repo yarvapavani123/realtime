@@ -15,7 +15,8 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://realtime-chi-peach.vercel.app"
+  "https://realtime-chi-peach.vercel.app",
+  "https://realtime-sage.vercel.app"
 ];
 
 app.use(cors({
