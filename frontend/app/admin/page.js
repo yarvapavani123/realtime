@@ -33,8 +33,7 @@ export default function AdminPage() {
 
       // API Call
       await axios.post(
-        "http://localhost:5000/feed",
-        {
+`${process.env.NEXT_PUBLIC_API_URL}/feed`        {
           message,
         }
       );
